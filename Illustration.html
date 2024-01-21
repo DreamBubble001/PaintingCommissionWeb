@@ -1,50 +1,132 @@
 <html>
 <head>
-    <link rel="stylesheet" href="Content\Portfolio.css" />
+    <title>作品集 - 插畫</title>
+    <link rel="stylesheet" href="Content\Illustration.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function(){
+				//取得本頁URL
+                var url = location.href;
+            
+                //取得?Search=之後的值
+                var temp = url.split("?Search=");
+                
+                //取得tag
+                var tag = temp[1];
+                
+                /*
+                //將?Search=之後的值分開(適用於複數值時)
+                var tags = temp[1].split("&");
+                
+                //一一顯示出來
+                for (var i = 0; i < vars.length; i++) {
+                alert(vars[i]);
+                }; */
+
+                //https://raw.githubusercontent.com/DreamBubble001/API/main/PaintingCommission.Json
+                $.getJSON("Data\\Json_2.Json",function(data){
+					var n = 0;
+                    for (var i = 0; i < data.length; i++) {
+						console.log(data[i].Title)
+                        //符合tag的圖才顯示
+                        if (data[i].Type == decodeURI(tag)){
+                            add_div(n, data[i].No, data[i].Title, data[i].URL, data[i].memo, data[i].Type);
+                            n = n + 1;
+                        }
+					}
+				})
+		})
+        function add_div(n, No, Title, imgurl, memo, type){
+            var num = n % 3;	
+            var a = document.createElement('a');
+            a.setAttribute('href', "javascript:void(0)");
+            a.setAttribute('onclick',"document.getElementById('cont_b').style.display='block';show_contB(this.id,'open')");
+            a.setAttribute('id',No);
+
+            var img = document.createElement('img');
+            var h4 = document.createElement('h4');
+            var title = document.createTextNode(Title);
+            var Memo = document.createTextNode(memo);
+            img.setAttribute('src',imgurl);
+            img.setAttribute('alt',memo);
+                    
+            h4.appendChild(title);
+            a.appendChild(img);
+            a.appendChild(h4);
+                    
+
+            if (num == 0) {
+                var done = document.getElementById('div1');
+            }else if (num == 1) {
+                var done = document.getElementById('div2');
+            }else{
+                var done = document.getElementById('div3');
+            }
+
+            done.appendChild(a);
+
+            //詳情頁
+            var div_b = document.createElement('div');
+            div_b.setAttribute('style',"display:none");
+            div_b.setAttribute('id','contB='+ No);
+                
+            var img_b = document.createElement('img');
+            var h4_b = document.createElement('h4');
+            var h5_b = document.createElement('h5');
+            var btn_b = document.createElement('button');
+            var title_b = document.createTextNode(Title);
+                    
+            img_b.setAttribute('src',imgurl);
+            img_b.setAttribute('alt',memo);
+            h4_b.appendChild(title_b);
+            h5_b.appendChild(Memo);
+            btn_b.textContent  = '關閉';
+            btn_b.setAttribute('onclick',"document.getElementById('cont_b').style.display='none';show_contB("+ No +",'close')");
+
+            div_b.appendChild(img_b);
+            div_b.appendChild(h4_b);
+            div_b.appendChild(h5_b);
+            div_b.appendChild(btn_b);
+
+            var done_b = document.getElementById('cont_b');
+            done_b.appendChild(div_b);
+
+            var loading = document.getElementById('loading');
+            document.querySelector('#loading').style.display = 'none';    
+            
+		}
+
+        function show_contB(clickID, type){
+            if (type == 'open' ){
+                document.getElementById('contB='+ clickID).style.display='block';
+            }else{
+                document.getElementById('contB='+ clickID).style.display='none';
+            }    
+        }
+
+    </script>
 </head>
-    <h2>Illustration 繪畫</h2>
-    <hr style="border: 1.5px solid #F7AA98" />
 
-    <p>內容</p>
-    <!-- Wrapper -->
-    <div id="wrapper">
-        <!-- Main -->
-        <section id="main">
-
-            <!-- Thumbnails -->
-            <section class="thumbnails">
-                <div>
-                    <a href="#">
-                        <img src="https://picsum.photos/200" alt="" />
-                        <h3 class="TextSize">頭貼<br>(到胸)</h3>
-                    </a>
-                    <a href="#">
-                        <img src="https://picsum.photos/200" alt="" />
-                        <h3 class="TextSize">全身<br>(人設圖)</h3>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="https://picsum.photos/200" alt="" />
-                        <h3 class="TextSize">對貼<br>(簡易背景)</h3>
-                    </a>
-                    <a href="#">
-                        <img src="https://picsum.photos/200" alt="" />
-                        <h3 class="TextSize">全身<br>(簡易背景)</h3>
-                    </a>
-                </div>
-                <div>
-                    <a href="#">
-                        <img src="https://picsum.photos/200" alt="" />
-                        <h3 class="TextSize">半身<br>(到腰)</h3>
-                    </a>
-                    <a href="#">
-                        <img src="https://picsum.photos/200" alt="" />
-                        <h3 class="TextSize">全身<br>(複雜背景)</h3>
-                    </a>
-                </div>
-            </section>
-
+<body>
+    <section id="main">
+        <section class="thumbnails">
+            <div id="loading">
+                <p></p><p></p><h3>Now Loading...</h3>
+            </div>
+            <div id="div1">
+                                        
+            </div>
+            <div id="div2">
+									
+            </div>
+            <div id="div3">
+                
+            </div>
         </section>
-    </div>
+        <div id="cont_b" class="cont">
+
+        </div>
+    </section>
+    
+</body>
 </html>
