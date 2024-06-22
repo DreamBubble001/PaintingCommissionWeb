@@ -1,0 +1,120 @@
+form, .form
+  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
+    display: inline-block
+    width: 100%
+    padding: 0.5em
+    margin: 0.1em 0 0.25em 0
+    font-family: inherit
+    font-size: inherit
+    -webkit-appearance: none
+    -webkit-user-select: text
+    -webkit-font-smoothing: antialiased
+    &:focus
+      outline: none !important
+    &.large
+      font-size: FONT-SIZE-LARGE
+
+  & textarea
+    padding: 0.4em 0.5em
+    min-height: 2.5em
+    line-height: FONT-SIZE-BIG
+
+  & label
+    font-size: FONT-SIZE-SMALL
+
+  & input[type="checkbox"], input[type="radio"]
+    display: inline-block !important
+    margin-right: 0.2em
+    font-family: inherit
+    font-size: inherit
+    width: 1.45em
+    height: 1.45em
+    line-height: 1.0em
+    -webkit-appearance: none
+    text-align: center
+    &:after
+      content: "+"
+      opacity: 0
+      font-size: FONT-SIZE-BIG
+      line-height: 0.9em
+    &:checked
+      &:after
+        opacity: 1
+
+  & input[type="checkbox"]:checked:after
+    content: "✔"
+
+  & input[type="radio"]
+    border-radius: 1em
+    &:checked:after
+      content: "·"
+
+  & .select
+    position: relative
+    display: block
+    &:after
+      z-index: 128
+      position: absolute
+      top: 0.8em
+      right: 0.5em
+      content: "▼"
+      pointer-events: none
+
+  & .fieldset, fieldset
+    & label
+      display: block
+      text-align: right
+      float: left
+      width: 25%
+      padding: 0.2em 0.4em 0 0
+
+      & > small
+        display: block
+        font-size: FONT-SIZE-TINY
+        font-weight: 300
+
+    & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
+      width: 75%
+
+/* -------------------------- CHECKBOX -------------------------- */
+[data-control=checkbox]
+  display: inline-block
+  margin: 0.1em 0 0.25em 0
+  height: SIZE = 32px
+  width: (SIZE * 2)
+  position: relative
+  font-size: inherit
+  line-height: SIZE
+  
+  input[type=checkbox]
+    visibility: hidden
+
+  &:after, &:before
+    z-index: 0
+    position: absolute
+  &:before
+    left: 1em
+    opacity: 0
+  &:after
+    right: 1em
+  &.checked
+    &:before
+      opacity: 1
+      z-index: 1
+    &:after
+      opacity: 0
+      z-index: 0
+
+  & label
+    display: block
+    height: SIZE = (SIZE - 4)
+    width: SIZE
+    margin: 2px
+    cursor: pointer
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+
+  & input[type=checkbox]:checked + label
+    left: SIZE

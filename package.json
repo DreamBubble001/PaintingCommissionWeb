@@ -1,0 +1,20 @@
+{
+  "name"        : "Tuktuk",
+  "version"     : "1.0.0",
+  "description" : "Simple (but powerful) RWD Framework",
+  "author"      : "Javi Jimenez <https://twitter.com/soyjavi>",
+  "homepage"    : "http://tuktuk.tapquo.com",
+  "license"     : "MIT",
+  "devDependencies" : {
+    "gulp"        : "*",
+    "gulp-coffee" : "*",
+    "gulp-concat" : "*",
+    "gulp-connect": "*",
+    "gulp-header" : "*",
+    "gulp-jasmine": "*",
+    "gulp-stylus" : "*",
+    "gulp-uglify" : "*",
+    "gulp-util"   : "*",
+    "gulp-yml"    : "*"
+  }
+}

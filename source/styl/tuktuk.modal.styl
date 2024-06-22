@@ -1,0 +1,141 @@
+[data-tuktuk="modal"]
+  position: fixed
+  left: 50%
+  transform translateY(-100%)
+  visibility: hidden
+  z-index: 1983
+  flex-direction column
+
+  header
+    padding: (AIR / 1.9) AIR
+
+  article, footer
+    padding: (AIR / 1.5) AIR
+
+  article
+    box-flex(1)
+    [class^="column_"]
+      margin: 0 !important
+
+  &.active
+    top: 5%
+    transform translateY(0%)
+    visibility: visible
+
+  &:not(.side)
+    WIDTH = 288px
+    margin-top: 0 !important
+    margin-right: 0 !important
+
+    &.column_5
+      WIDTH = 368px
+      margin-left: -(WIDTH / 2)
+    &.column_6
+      WIDTH = 448px
+      margin-left: -(WIDTH / 2)
+    &.column_7
+      WIDTH = 528px
+      margin-left: -(WIDTH / 2)
+    &.column_8
+      WIDTH = 608px
+      margin-left: -(WIDTH / 2)
+    &.column_9
+      WIDTH = 688px
+      margin-left: -(WIDTH / 2)
+    &.column_10
+      WIDTH = 768px
+      margin-left: -(WIDTH / 2)
+    &.column_11
+      WIDTH = 848px
+      margin-left: -(WIDTH / 2)
+    &.column_12
+      WIDTH = 928px
+      margin-left: -(WIDTH / 2)
+
+  &
+    width: 288px
+  &.column_5
+    width: 368px
+  &.column_6
+    width: 448px
+  &.column_7
+    width: 528px
+  &.column_8
+    width: 608px
+  &.column_9
+    width: 688px
+  &.column_10
+    width: 768px
+  &.column_11
+    width: 848px
+  &.column_12
+    width: 928px
+
+  &.side
+    position: absolute
+    display-flex()
+    flex-direction column
+    top: 0
+    right: 0
+    bottom: 0
+    left: auto
+    margin: 0
+    transform translateX(100%)
+    &.active
+      transform translateX(0%)
+
+
+[data-tuktuk="lock"]
+  display: none
+  width: 100%
+  height: 100%
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  z-index: 1980
+  visibility: hidden
+  &.active
+    visibility: visible
+    &[data-loading=true]
+      > .loading
+        display: block
+
+  > .loading
+    SIZE = 5.5em
+    display: none
+    position: fixed
+    left: 50%
+    top: 50%
+    width: SIZE
+    height: (SIZE / 2)
+    margin-left: -(SIZE / 2)
+    margin-top: -(SIZE / 2)
+
+    SPEED = 1s
+    SIZE = (SIZE / 3.5)
+    &::before, &::after
+      content: ""
+      position: absolute
+      display: block
+      top: (SIZE / 2.55)
+      width: SIZE
+      height: SIZE
+      animation loading-dots SPEED infinite
+
+    &::before
+      left: (SIZE / 2.3)
+    &::after
+      animation loading-dots SPEED (SPEED / 2) infinite
+      right: (SIZE / 2.3)
+
+@keyframes loading-dots
+  0%
+    opacity: 1
+    transform(scale( 1 ))
+  50%
+    opacity: 0.5
+    transform(scale( 0.85 ))
+  100%
+    opacity: 1
+    transform(scale( 1 ))
