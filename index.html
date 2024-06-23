@@ -6,7 +6,7 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<link rel="stylesheet" href="package/bootstrap.min.css">
-	
+
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="package/tuktuk.css">
@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="package/tuktuk.icons.css">
 
     <style>
+		body{
+    		cursor:url('www/images/logo_home.png'),auto;
+			}
         body > header .logo {
             margin-right: 1rem;
             max-height: 3rem;
@@ -25,10 +28,12 @@
             position: relative;
             top: 5px;
             left: 2px; }
+		
 		ul { /* 取消ul預設的內縮及樣式 */
         margin: 0;
         padding: 0;
         list-style: none;
+		
     }
 
     ul.drop-down-menu {
@@ -110,6 +115,7 @@
     ul.drop-down-menu ul li:hover > ul { /* 第二層之後的選單展開位置*/
         left: 90%;
     }
+	
 		/*PIC*/
 .cover-fit{height: 200px;object-fit: cover;overflow:hidden;flex-direction:row;}
 .flexbin {
@@ -120,48 +126,53 @@
     overflow:hidden;}
     .flexbin:after {
       content: '';
+	  max-width: 200px;
       min-width: 200px;
       height: 0; }
     .flexbin > * {
       position: relative;
       display: block;
       height: 200px;
+	  max-width: 200px;
+      min-width: 200px;
       margin: 1px;
       flex-grow: 1; }
       .flexbin > * > img {
         height: 200px;
         object-fit: cover;
-        max-width: 100%;
-        min-width: 100%;
+        max-width: 200px;
+        min-width: 200px;
         vertical-align: bottom; }
         .flexbin img:hover{
             transform: scale(1.2);
             transition: 1s; } 
-    @media (max-width: 980px) {
+    @media (max-width: 100px) {
         .flexbin:after {
           min-width: 100px;}
         .flexbin > * {
           height: 100px;}
           .flexbin > * > img {
             height: 100px;}}
-    @media (max-width: 400px) {
+    @media (max-width: 50px) {
         .flexbin:after {
           min-width: 50px;}
         .flexbin > * {
           height: 50px;}
           .flexbin > * > img {
             height: 50px;}}
-
+ 
 		
 		
     </style>
+	
+	
 </head>
-<body>
+<body >
     <header class="padding">
         <div class="row">
             <div class="column_6">
-                <img src="www/images/logo_home.png" class="logo on-left"/>
-                <h2 class="text italic thin">橙子Chen.uu</h2>
+                <img  src="www/images/logo_home.png" class="logo on-left"/>
+              <h2  class="text italic thin"><a href="href=&quot;https://dreambubble001.github.io/PaintingCommissionWeb/index.html&quot;">橙子Chen.uu</a></h2>
             </div>
             <nav class="column_6  text right bold">
                 <a href="#">委託相關</a>
@@ -199,7 +210,7 @@
   				</div>
   				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
     			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    			<span class="visually-hidden">Previous</span>
+    			<span class="visually-hidden">Up</span>
   				</button>
   				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
     			<span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -209,10 +220,10 @@
 
                 <div class="row text bold hide-phone">
                     <div class="column_3" >
-                        <a href="#" class="color theme"><span class="icon home"></span></a>
+                        <a href="https://dreambubble001.github.io/PaintingCommissionWeb/index.html" class="color theme"><span class="icon home"></span></a>
                     </div>
                     <div class="column_3 ">
-                        <a href="https://forms.fillout.com/t/i5uFL4YXnJus"><span class="icon comments">委託表單%詢問</span> </a>
+                        <a href="https://forms.fillout.com/t/i5uFL4YXnJus"><span  class="icon comments">委託表單%詢問</span> </a>
                     </div>
                     <div class="column_3 text big right">
 						<a href="#" class="margin-right icon facebook"></span></a>
@@ -220,7 +231,7 @@
 						&nbsp;&nbsp;
 						<a><instagram_icon href="#" class="icon fa-instagram"><span class="label">Instagram</span></instagram_icon></a>
 						&nbsp;&nbsp;
-						<a><instagram_icon href="#" class="icon fa-instagram"><span class="label">X</span></instagram_icon></a>
+					    <a href="https://x.com/chen__uu"><instagram_icon  class="icon fa-instagram"><span class="label">X</span></instagram_icon></a>				
                     </div>
                 </div>
             </div>
@@ -243,17 +254,14 @@
         <div class="row padding-top padding-bottom">
             <div class="column_12">
                 <h2 class="text bold inline">About Us</h2>
-                <nav class="inline on-right">
-                    <a href="#" class="button small">分享</a>
-                </nav>
-               
+
             </div>
-            <div data-tip="Hello world!" class="tip-top column_x bck light text left margin-bottom padding-top padding-bottom">
+            <div data-tip="歡迎提表單詢問喔~" class="tip-top column_x bck light text left margin-bottom padding-top padding-bottom">
 			<p>長期接受繪圖委託，主要承接人物、頭像設計等項目，歡迎來信詢問。</p>	
 					  <p>若尚無明確委託設定，也可以留下方便聯絡時間，會協助完成委託設定。</p>
 					  <p>超過3天無回應，也可至推特或FB詢問。可能信件未能收到。</p>
 			</div>
-			<div data-tip="Hello world!" class="tip-left column_x bck light text center margin-bottom padding-top padding-bottom">
+			<div data-tip="歡迎提表單詢問喔~" class="tip-left column_x bck light text center margin-bottom padding-top padding-bottom">
 				<ul style="vertical-align: middle;">
 							<video muted loop controls width="100%" autoplay=true>            
 								<source src="www/images/首頁影片.mp4" type="video/mp4" />
@@ -265,8 +273,8 @@
 						</ul>
 				
 			</div>
-					
-					
+		
+
         </div>
     </section>
 
@@ -280,6 +288,7 @@
 					  <img class="cover-fit" src="www/images/06.jpg">
 					  <img class="cover-fit" src="www/images/07.jpg">
 					  <img class="cover-fit" src="www/images/08.jpg">
+					  <img class="cover-fit" src="www/images/09.jpg"><strong></strong>
 				</div>
 				  </section>
 
