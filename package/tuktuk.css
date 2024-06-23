@@ -31,7 +31,7 @@
 .button.tiny,button.tiny{font-size:.8em;line-height:2em;padding:0 .6em}
 .button.anchor,button.anchor{width:100%;}
 .button.anchor:not(.icon) .icon,button.anchor:not(.icon) .icon{position:absolute;left:1em}
-.button.disabled,button.disabled,.button:disabled,button:disabled{cursor:default}
+.button.disabled,button.disabled,.button:disabled,button:disabled{cursor:url("../www/images/logo_home.png"),auto}
 .button[data-loading] > .icon,button[data-loading] > .icon{display:none}
 .button[data-loading] > .loading,button[data-loading] > .loading{display:inline-block;}
 .button[data-loading] > .loading > .container,button[data-loading] > .loading > .container{-webkit-animation:loading 600ms infinite linear;-moz-animation:loading 600ms infinite linear;-ms-animation:loading 600ms infinite linear;-o-animation:loading 600ms infinite linear;animation:loading 600ms infinite linear}
