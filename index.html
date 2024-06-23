@@ -126,43 +126,37 @@
     overflow:hidden;}
     .flexbin:after {
       content: '';
-	  max-width: 200px;
       min-width: 200px;
       height: 0; }
     .flexbin > * {
       position: relative;
       display: block;
       height: 200px;
-	  max-width: 200px;
-      min-width: 200px;
       margin: 1px;
       flex-grow: 1; }
       .flexbin > * > img {
         height: 200px;
         object-fit: cover;
-        max-width: 200px;
-        min-width: 200px;
+        max-width: 100%;
+        min-width: 100%;
         vertical-align: bottom; }
         .flexbin img:hover{
             transform: scale(1.2);
             transition: 1s; } 
-    @media (max-width: 50px) {
+    @media (max-width: 980px) {
+        .flexbin:after {
+          min-width: 100px;}
+        .flexbin > * {
+          height: 100px;}
+          .flexbin > * > img {
+            height: 100px;}}
+    @media (max-width: 400px) {
         .flexbin:after {
           min-width: 50px;}
         .flexbin > * {
           height: 50px;}
           .flexbin > * > img {
             height: 50px;}}
-    @media (max-width: 30px) {
-        .flexbin:after {
-          min-width: 30px;}
-        .flexbin > * {
-          height: 30px;}
-          .flexbin > * > img {
-            height: 30px;}}
- 
-		
-		
     </style>
 	
 	
@@ -208,11 +202,11 @@
       			</div>
     			</div>
   				</div>
-  				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+  				<button class="carousel-control-prev" style="width: 10%" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
     			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
     			<span class="visually-hidden">Up</span>
   				</button>
-  				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+  				<button class="carousel-control-next" style="width: 10%" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
     			<span class="carousel-control-next-icon" aria-hidden="true"></span>
     			<span class="visually-hidden">Next</span>
   				</button>
@@ -288,7 +282,8 @@
 					  <img class="cover-fit" src="www/images/06.jpg">
 					  <img class="cover-fit" src="www/images/07.jpg">
 					  <img class="cover-fit" src="www/images/08.jpg">
-					  <img class="cover-fit" src="www/images/09.jpg"><strong></strong>
+					  
+					  <strong></strong>
 				</div>
 				  </section>
 
