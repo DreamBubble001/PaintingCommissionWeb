@@ -139,59 +139,16 @@
         left: 90%;
     }
 	
-		/*PIC*/
-.cover-fit{height: 200px;object-fit: cover;overflow:hidden;flex-direction:row;}
-.flexbin {
-    display: flex;
-    overflow: hidden;
-    flex-wrap: wrap;
-    margin: 0px; 
-    overflow:hidden;}
-    .flexbin:after {
-      content: '';
-	  max-width: 200px;
-      min-width: 200px;
-      height: 0; }
-    .flexbin > * {
-      position: relative;
-      display: block;
-      height: 200px;
-	  max-width: 200px;
-      min-width: 200px;
-      margin: 1px;
-      flex-grow: 1; }
-      .flexbin > * > img {
-        height: 200px;
-        object-fit: cover;
-        max-width: 200px;
-        min-width: 200px;
-        vertical-align: bottom; }
-        .flexbin img:hover{
-            transform: scale(1.2);
-            transition: 1s; } 
-    @media (max-width: 100px) {
-        .flexbin:after {
-          min-width: 100px;}
-        .flexbin > * {
-          height: 100px;}
-          .flexbin > * > img {
-            height: 100px;}}
-    @media (max-width: 50px) {
-        .flexbin:after {
-          min-width: 50px;}
-        .flexbin > * {
-          height: 50px;}
-          .flexbin > * > img {
-            height: 50px;}}
+		
  
 		.table-custom {
-  width: 1000px;
+  width: 100%;
 }
 table {
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 100px) {
 .table-custom {
   width: 100%;
 }
@@ -230,7 +187,8 @@ table {
         </div>
     </header>
     
-    <div class="margin-top">
+    <div class="table-custom">
+        <div class="margin-top">
 <section class="page-title bg-2_notice">
   <div class="container">
     <div class="row">
@@ -242,9 +200,7 @@ table {
     </div>
   </div>
 </section>
-
-        
-        <table class="margin-top">
+            <table class="margin-top" style="max-width: 50% ;margin-left: auto;margin-right: auto;">
         <thead>
             <tr>
                 <th>接受項目</th>
@@ -274,8 +230,8 @@ table {
     </table>
 
     <br>
+        <table class="margin-top" style="max-width: 50% ;margin-left: auto;margin-right: auto;">
         
-        <table  class="margin-top">
         <thead>
             <tr>
                 <th>委託注意事項</th>
@@ -309,6 +265,11 @@ table {
             
         </tbody>
     </table>
+    </div>
+    
+
+        
+        
 <br>
         <!-- Portfolio Start -->
   <div class="tabs" >
