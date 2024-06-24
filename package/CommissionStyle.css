@@ -11,9 +11,7 @@ html {
         padding: 40px 0 20px 0;
         margin: 0;
     }
-.page-title {
-  padding: 100px 0;
-}
+
 .page-title .block {
   text-align: center;
 }
@@ -53,7 +51,7 @@ html {
 .bg-2_notice {
   background: url("../www/images/X.jpg");
   background-size: 100%;
-  background-attachment:  scroll;
+  background-attachment:  local;
 }
 .tabs {
     left: 50%;
