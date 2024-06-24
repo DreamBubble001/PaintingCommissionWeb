@@ -52,8 +52,7 @@ html {
 }
 .bg-2_notice {
   background: url("../www/images/X.jpg");
-  background-size: 50%;
-  background-attachment: fixed;
+  background-size: 100%;
 }
 .tabs {
     left: 50%;
