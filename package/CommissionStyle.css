@@ -51,7 +51,7 @@ html {
 .bg-2_notice {
   background: url("../www/images/X.jpg");
   background-size: 100%;
-  background-attachment:  scroll;
+  background-attachment:  local;
 }
 .tabs {
     left: 50%;
@@ -135,7 +135,7 @@ html {
 
         .tabs .slider .indicator {
             position: relative;
-            width: 100px;
+           
             max-width: 100%;
             margin: 0 auto;
             height: 4px;
@@ -271,21 +271,13 @@ html {
 
 @media (max-width: 450px) {
     .tabs ul li label {
-        padding: 5px;
         border-radius: 5px;
     }
 
-        .tabs ul li label span {
-            display: none;
-        }
+        
 
-    .tabs .slider {
-        display: none;
-    }
+    
 
-    .tabs .content {
-        margin-top: 20px;
-    }
 
         .tabs .content section h2 {
             display: block;
